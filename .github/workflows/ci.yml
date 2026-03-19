@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       
       - name: Install OSS-Cad-Suite
-        uses: YosysHQ/setup-oss-cad-suite@v3
+        uses: YosysHQ/setup-oss-cad-suite@v4
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -36,10 +36,10 @@ jobs:
     runs-on: [self-hosted, linux, x64, fast]
     steps:
       - name: Checkout EQY
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Checkout Yosys
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: 'YosysHQ/yosys'
           path: 'yosys'
@@ -65,7 +65,7 @@ jobs:
           sed -i 's,/usr/local/lib,${GITHUB_WORKSPACE}/.local/lib,g' ${GITHUB_WORKSPACE}/.local/bin/yosys-config
 
       - name: Checkout SBY
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: 'YosysHQ/sby'
           path: 'sby'
