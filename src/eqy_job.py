@@ -3,10 +3,7 @@ if os.name == "posix":
     import resource, fcntl
 import subprocess, signal
 from select import select
-if os.name == "posix":
-    from time import time, localtime
-else:
-    from time import time, localtime, sleep
+from time import time, localtime, sleep
 import click
 
 
